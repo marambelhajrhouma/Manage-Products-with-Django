@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product Details</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Explore Our E-commerce World</h1>
+            <h3>Welcome</h3>
+        </div>
+
+        <div><p>
+            
+        </p></div>
+        <form method="POST" action="/update/{{product.id}}">
+            {% csrf_token %} 
+            <!--raison de sécurité-->
+            <div>
+                <br>
+                <p>
+                    <h3>Update Details</h3>
+                </p>
+            </div>
+            <div>
+                <p>Product ID:</p>
+                <div>
+                    <input type="text" name="pid" value="{{product.pk}}" readonly />
+                </div>
+            </div>
+            <div>
+                <p>Product Name:</p>
+                <div>
+                    <input type="text" name="pname" value="{{product.pname}}" />
+                </div>
+            </div>
+            <div>
+                <p>Price :</p>
+                <div>
+                    <input type="text" name="price" value="{{product.price}}" />
+                </div>
+            </div>
+            <div>
+                <p>Quantity:</p>
+                <div>
+                    <input type="text" name="quantity" value="{{product.quantity}}" />
+                </div>
+            </div>
+            <div>
+                <p>Details:</p>
+                <div>
+                    <textarea name="details">{{product.details}}</textarea>
+                </div>
+            </div>
+            <div>
+                <br>
+                <button type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

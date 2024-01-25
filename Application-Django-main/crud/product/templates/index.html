@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Product</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Explore Our E-commerce World</h1>
+            <h3>Welcome</h3>
+        </div>
+
+        <div><p>
+            
+        </p></div>
+
+        <form method="POST" action="/prod/">
+            {% csrf_token %}
+            <br>
+            <p>
+                <h3>Enter Product Details</h3>
+            </p>
+            <div>
+                <p>Product Name:</p> {{ form.pname }}
+            </div>
+            <div>
+                <p>Price:</p> {{ form.price }}
+            </div>
+            <div>
+                <p>Quantity:</p> {{ form.quantity }}
+            </div>
+            <div>
+                <p>Details:</p> {{ form.details }}
+            </div>
+
+            <div>
+                <br>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
